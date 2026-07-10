@@ -52,4 +52,6 @@
   # missing zsh config
   # missing alacritty config
   # missing helix config
+
+  home.stateVersion = "26.05";
 }
