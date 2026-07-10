@@ -12,8 +12,9 @@
   boot.loader.grub.devices = [ "/dev/sda" ];
 
   hardware.cpu.intel.updateMicrocode = true;
-  hardware.opengl.enable = true;
-  hardware.pulseaudio.enable = false;
+  hardware.graphics.enable = true;
+
+  services.pulseaudio.enable = false;
 
   networking.hostName = "zibbble-nixos";
   networking.networkmanager.enable = true;
@@ -21,13 +22,13 @@
   time.timeZone = "America/Toronto";
 
   services.displayManager.ly.enable = true;
-  services.xserver = {
-    enable = false;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-    # we're using oxwm
-    # windowManager.qtile.enable = true;
-  };
+  #services.xserver = {
+  #  enable = false;
+  #  autoRepeatDelay = 200;
+  #  autoRepeatInterval = 35;
+  #  # we're using oxwm
+  #  # windowManager.qtile.enable = true;
+  #};
 
   programs.zsh.enable = true;
   users.users.zibbble = {
