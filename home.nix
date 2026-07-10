@@ -9,8 +9,8 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    enableAutosuggestions = true;
-    enableSyntaxHighlighting = true;
+    autosuggestion.enable = true;
+    syntaxHighlighting.enable = true;
 
     oh-my-zsh = {
       enable = true;
@@ -23,7 +23,7 @@
       update = "sudo nixos-rebuild switch";
     };
 
-    initExtra = ''
+    initContent = ''
       # Custom keybindings or extra config
       bindkey '^f' autosuggest-accept
     '';

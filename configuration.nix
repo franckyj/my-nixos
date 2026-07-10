@@ -22,13 +22,13 @@
   time.timeZone = "America/Toronto";
 
   services.displayManager.ly.enable = true;
-  #services.xserver = {
-  #  enable = false;
-  #  autoRepeatDelay = 200;
-  #  autoRepeatInterval = 35;
-  #  # we're using oxwm
-  #  # windowManager.qtile.enable = true;
-  #};
+  services.xserver = {
+    enable = true;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+    # we're using oxwm
+    # windowManager.qtile.enable = true;
+  };
 
   programs.zsh.enable = true;
   users.users.zibbble = {

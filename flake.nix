@@ -2,9 +2,9 @@
   description = "my nixos";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-26.05";
+    nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
     home-manager = {
-      url = "github:nix-community/home-manager/release-26.05";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     oxwm = {
@@ -38,8 +38,8 @@
         oxwm.nixosModules.default
         {
           services.xserver = {
-            enable = false;
-            windowManager.oxwm.enable = false;
+            enable = true;
+            windowManager.oxwm.enable = true;
           };
         }
       ];
