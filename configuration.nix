@@ -14,7 +14,7 @@
 
   hardware.cpu.intel.updateMicrocode = true;
   hardware.opengl.enable = true;
-  hardware.pulseaudio.enable = true;
+  hardware.pulseaudio.enable = false;
 
   networking.hostName = "zibbble-nixos";
   networking.networkmanager.enable = true;
@@ -30,11 +30,13 @@
     # windowManager.qtile.enable = true;
   };
 
+  programs.zsh.enable = true;
   users.users.zibbble = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
+      zsh
     ];
     shell = pkgs.zsh;
   };
