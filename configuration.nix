@@ -54,8 +54,6 @@
     zed
   ];
 
-  nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono
   ];

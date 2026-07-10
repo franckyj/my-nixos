@@ -22,6 +22,10 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
+        ({ config, pkgs, ...}: {
+          # install the overlay
+          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+        })
         home-manager.nixosModules.home-manager
         {
           home-manager = {
