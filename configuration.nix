@@ -59,7 +59,7 @@
 
   nix.gc = {
     automatic = true;
-    automaticOptions = "--delete-older-than 30d --max-free 10G";
+    options = "--delete-older-than 30d --max-free 10G";
   };
 
   nix.settings.experimental-features = [ "nix-command" "flakes" ];
