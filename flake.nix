@@ -38,7 +38,7 @@
         oxwm.nixosModules.default
         {
           services.xserver = {
-            enable = true;
+            # enable = true;
             windowManager.oxwm.enable = true;
           };
         }
