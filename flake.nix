@@ -31,7 +31,7 @@
           home-manager = {
             useGlobalPkgs = true;
             useUserPackages = true;
-            users.tony = import ./home.nix;
+            users.zibbble = import ./home.nix;
             backupFileExtension = "backup";
           };
         }
