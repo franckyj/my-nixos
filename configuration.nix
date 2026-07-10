@@ -23,7 +23,7 @@
 
   services.displayManager.ly.enable = true;
   services.xserver = {
-    enable = true;
+    # enable = true;
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
     # we're using oxwm

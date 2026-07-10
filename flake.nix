@@ -17,7 +17,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, oxwm, alacritty-theme, ... }: {
+  outputs = input@{ self, nixpkgs, home-manager, oxwm, alacritty-theme, ... }: {
     nixosConfigurations.zibbble-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
@@ -26,6 +26,13 @@
           # install the overlay
           nixpkgs.overlays = [ alacritty-theme.overlays.default ];
         })
+        oxwm.nixosModules.default
+        {
+          services.xserver = {
+            # enable = true;
+            # windowManager.oxwm.enable = true;
+          };
+        }
         home-manager.nixosModules.home-manager
         {
           home-manager = {
@@ -33,13 +40,6 @@
             useUserPackages = true;
             users.zibbble = import ./home.nix;
             backupFileExtension = "backup";
-          };
-        }
-        oxwm.nixosModules.default
-        {
-          services.xserver = {
-            enable = true;
-            # windowManager.oxwm.enable = true;
           };
         }
       ];
