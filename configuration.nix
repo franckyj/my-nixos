@@ -13,7 +13,6 @@
 
   hardware.cpu.intel.updateMicrocode = true;
   hardware.opengl.enable = true;
-  hardware.sound.enable = true;
   hardware.pulseaudio.enable = true;
 
   networking.hostName = "zibbble-nixos";
