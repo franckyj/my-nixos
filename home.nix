@@ -9,8 +9,8 @@
   programs.zsh = {
     enable = true;
     enableCompletion = true;
-    Autosuggestions.enable = true;
-    SyntaxHighlighting.enable = true;
+    autosuggestions.enable = true;
+    syntaxHighlighting.enable = true;
 
     oh-my-zsh = {
       enable = true;
