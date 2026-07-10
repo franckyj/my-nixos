@@ -13,7 +13,7 @@
     };
     alacritty-theme = {
       url = "github:alexghr/alacritty-theme.nix";
-      inputs.nixpkgs.follows = "nixpkgs"
+      inputs.nixpkgs.follows = "nixpkgs";
     };
   };
 
