@@ -16,7 +16,7 @@
   hardware.sound.enable = true;
   hardware.pulseaudio.enable = true;
 
-  networking.hostName = "zibbble";
+  networking.hostName = "zibbble-nixos";
   networking.networkmanager.enable = true;
 
   time.timeZone = "America/Toronto";
