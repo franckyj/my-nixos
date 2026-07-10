@@ -43,13 +43,18 @@
   environment.systemPackages = with pkgs; [
     vim
     wget
+    docker
     alacritty
     git
     brave
     helix
     discord
     steam
+    pi-coding-agent
+    zed
   ];
+
+  nixpkgs.overlays = [ alacritty-theme.overlays.default ];
 
   fonts.packages = with pkgs; [
     nerd-fonts.jetbrains-mono

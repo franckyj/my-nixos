@@ -6,8 +6,39 @@
   home.packages = with pkgs; [ helix alacritty ];
 
   # programs.bash.enable = true;
-  programs.zsh.enable = true;
-  programs.alacritty.enable = true;
+  programs.zsh = {
+    enable = true;
+    enableCompletion = true;
+    enableAutosuggestions = true;
+    enableSyntaxHighlighting = true;
+
+    oh-my-zsh = {
+      enable = true;
+      theme = "robbyrussell"; # or "agnoster", "dst", etc.
+      plugins = [ "git" "docker" "z" ];
+    };
+
+    shellAliases = {
+      ll = "ls -l";
+      update = "sudo nixos-rebuild switch";
+    };
+
+    initExtra = ''
+      # Custom keybindings or extra config
+      bindkey '^f' autosuggest-accept
+    '';
+  };
+
+  programs.fzf = {
+    enable = true;
+    enableZshIntegration = true;
+  };
+
+  programs.alacritty = {
+    enable = true;
+    settings.general.import = [ pkgs.alacritty-theme.cyber_punk_neon ];
+  };
+
   programs.helix.enable = true;
 
   programs.git.enable = true;

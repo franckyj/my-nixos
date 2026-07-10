@@ -11,7 +11,10 @@
       url = "github:tonybanters/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
+    alacritty-theme = {
+      url = "github:alexghr/alacritty-theme.nix";
+      inputs.nixpkgs.follows = "nixpkgs"
+    };
   };
 
   outputs = { self, nixpkgs, home-manager, oxwm, ... }: {
