@@ -26,13 +26,13 @@
           # install the overlay
           nixpkgs.overlays = [ alacritty-theme.overlays.default ];
         })
-        oxwm.nixosModules.default
-        {
-          services.xserver = {
-            # enable = true;
-            # windowManager.oxwm.enable = true;
-          };
-        }
+        #oxwm.nixosModules.default
+        #{
+        #  services.xserver = {
+        #    # enable = true;
+        #    # windowManager.oxwm.enable = true;
+        #  };
+        #}
         home-manager.nixosModules.home-manager
         {
           home-manager = {
