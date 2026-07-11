@@ -52,6 +52,8 @@ in
       ll = "ls -la";
       update = "sudo nixos-rebuild switch";
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#zibbble-nixos";
+      testxdg = "echo ${xdg.configFile}"
+      testhd = "echo ${config.home.homeDirectory}"
     };
 
     initContent = ''
@@ -92,9 +94,9 @@ in
   # missing helix config
 
   # try and use lib.attrsets.mapAttrs' at some point
-  xdg.configFile."alacritty" = {
-    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
-    recursive = true;
+  #xdg.configFile."alacritty" = {
+  #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
+  #  recursive = true;
   };
   #home.file.".config/oxwm" = {
   #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm";
