@@ -96,6 +96,7 @@ in
       source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
       recursive = true;
     };
+  };
 
   #xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml";
   #xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
