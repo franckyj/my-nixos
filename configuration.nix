@@ -21,31 +21,23 @@
 
   time.timeZone = "America/Toronto";
 
-  # services.displayManager.ly.enable = true;
-  services.getty.autologinUser = "zibbble";
+  services.displayManager.ly.enable = true;
 
   services.xserver = {
     enable = true;
     autoRepeatDelay = 200;
     autoRepeatInterval = 35;
-    windowManager.qtile.enable = true;
-    extraConfig = ''
-        Section "Monitor"
-          Identifier "Virtual-1"
-          Option "PreferredMode" "1920x1080"
-        EndSection
-    '';
   };
 
-  # programs.zsh.enable = true;
+  programs.zsh.enable = true;
   users.users.zibbble = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
-      # zsh
+      zsh
     ];
-    # shell = pkgs.zsh;
+    shell = pkgs.zsh;
   };
 
   nixpkgs.config.allowUnfree = true;

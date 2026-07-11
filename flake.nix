@@ -7,33 +7,33 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #oxwm = {
-    #  url = "github:tonybanters/oxwm";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
-    #alacritty-theme = {
-    #  url = "github:alexghr/alacritty-theme.nix";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    oxwm = {
+      url = "github:tonybanters/oxwm";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+    alacritty-theme = {
+      url = "github:alexghr/alacritty-theme.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  #, oxwm, alacritty-theme
-  outputs = input@{ self, nixpkgs, home-manager, ... }: {
+  outputs = input@{ self, nixpkgs, home-manager, oxwm, alacritty-theme, ... }: {
     nixosConfigurations.zibbble-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        #({ config, pkgs, ...}: {
-        #  # install the overlay
-        #  nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-        #})
+        ({ config, pkgs, ...}: {
+          # install the overlay
+          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+        })
         #oxwm.nixosModules.default
-        #{
-        #  services.xserver = {
-        #    # enable = true;
-        #    # windowManager.oxwm.enable = true;
-        #  };
-        #}
+        {
+          services.xserver = {
+            enable = true;
+            # windowManager.oxwm.enable = true;
+            windowManager.oxwm.package = inputs.oxwm.packages.x86_64-linux.default;
+          };
+        }
         home-manager.nixosModules.home-manager
         {
           home-manager = {

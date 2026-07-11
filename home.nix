@@ -37,18 +37,18 @@
 
   programs.alacritty = {
     enable = true;
-    #settings.general.import = [ pkgs.alacritty-theme.cyber_punk_neon ];
+    settings.general.import = [ pkgs.alacritty-theme.cyber_punk_neon ];
   };
 
   programs.helix.enable = true;
 
   programs.git.enable = true;
 
-  #home.sessionVariables = {
-  #  EDITOR = "helix";
-  #  BROWSER = "brave";
-  #  TERM = "xterm-256color";
-  #};
+  home.sessionVariables = {
+    EDITOR = "helix";
+    BROWSER = "brave";
+    TERM = "xterm-256color";
+  };
 
   # missing zsh config
   # missing alacritty config
