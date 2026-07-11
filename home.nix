@@ -80,7 +80,7 @@ in
 
   programs.starship = {
     enable = true;
-  }
+  };
 
   home.sessionVariables = {
     EDITOR = "helix";
