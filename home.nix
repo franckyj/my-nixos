@@ -91,8 +91,14 @@ in
   # missing zsh config
   # missing helix config
 
+  xdg.configFile = {
+    "alacritty" = {
+      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
+      recursive = true;
+    };
+
   #xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml";
-  xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
+  #xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
 
   # try and use lib.attrsets.mapAttrs' at some point
   #xdg.configFile."alacritty" = {
