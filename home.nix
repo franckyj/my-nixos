@@ -81,7 +81,8 @@ in
   # missing zsh config
   # missing helix config
 
-  xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
+  config.xdg.configHome."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
+  #home.file."./config/alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
   #xdg.configFile = builtins.mapAttrs
   #  (name: subpath: {
   #    source = create_symlink "${dotfiles}/${subpath}";
