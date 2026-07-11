@@ -91,32 +91,12 @@ in
   # missing zsh config
   # missing helix config
 
-  home.file = {
-    ".config/myapp/config.ini" = {
-      text = ''
-        [settings]
-        key = value
-        var = ${config.home.homeDirectory}
-      '';
-    };
-  };
-
-  xdg.configFile = {
-    ".myapp2/config2.ini" = {
-      text = ''
-        [settings]
-        key = value
-        var = 123
-      '';
-    };
-  };
-
-
   # try and use lib.attrsets.mapAttrs' at some point
-  #xdg.configFile."alacritty" = {
-  #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
-  #  recursive = true;
-  #};
+  xdg.configFile."alacritty" = {
+    # source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
+    source = config.lib.file.mkOutOfStoreSymlink "$HOME/nixos-dotfiles/config/alacritty";
+    recursive = true;
+  };
   #home.file.".config/oxwm" = {
   #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm";
   #  recursive = true;
