@@ -81,10 +81,17 @@ in
   # missing zsh config
   # missing helix config
 
-  home.file."./config/alacritty" = {
+  # try and use lib.attrsets.mapAttrs' at some point
+  home.file.".config/alacritty" = {
     source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
     recursive = true;
   };
+    home.file.".config/oxwm" = {
+    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm";
+    recursive = true;
+  };
+
+  # for some reason this doesn't work => "can't install file outside of $HOME"
   #xdg.configFile = builtins.mapAttrs
   #  (name: subpath: {
   #    source = create_symlink "${dotfiles}/${subpath}";
