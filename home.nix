@@ -9,6 +9,8 @@ let
   };
 in
 {
+  xdg.enable = true; # Enable XDG base directory support
+
   home.username = "zibbble";
   home.homeDirectory = "/home/zibbble";
   home.stateVersion = "26.05";
