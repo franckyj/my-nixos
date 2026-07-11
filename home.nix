@@ -101,12 +101,12 @@ in
     };
   };
 
-  home.file = {
-    ".config/myapp/config2.ini" = {
+  xdg.configFile = {
+    ".myapp2/config2.ini" = {
       text = ''
         [settings]
         key = value
-        var = ${xdg.configFile}
+        var = 123
       '';
     };
   };
