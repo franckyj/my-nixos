@@ -30,8 +30,8 @@
         {
           services.xserver = {
             enable = true;
-            # windowManager.oxwm.enable = true;
             windowManager.oxwm.package = inputs.oxwm.packages.x86_64-linux.default;
+            windowManager.oxwm.enable = true;
           };
         }
         home-manager.nixosModules.home-manager
