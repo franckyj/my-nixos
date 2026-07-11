@@ -7,14 +7,14 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    oxwm = {
-      url = "github:tonybanters/oxwm";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    alacritty-theme = {
-      url = "github:alexghr/alacritty-theme.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #oxwm = {
+    #  url = "github:tonybanters/oxwm";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
+    #alacritty-theme = {
+    #  url = "github:alexghr/alacritty-theme.nix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = input@{ self, nixpkgs, home-manager, oxwm, alacritty-theme, ... }: {
@@ -22,10 +22,10 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        ({ config, pkgs, ...}: {
-          # install the overlay
-          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-        })
+        #({ config, pkgs, ...}: {
+        #  # install the overlay
+        #  nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+        #})
         #oxwm.nixosModules.default
         #{
         #  services.xserver = {

@@ -21,24 +21,26 @@
 
   time.timeZone = "America/Toronto";
 
-  services.displayManager.ly.enable = true;
-  services.xserver = {
-    enable = true;
-    autoRepeatDelay = 200;
-    autoRepeatInterval = 35;
-    # we're using oxwm
-    # windowManager.qtile.enable = true;
-  };
+  # services.displayManager.ly.enable = true;
+  services.getty.autologinUser = "tony";
 
-  programs.zsh.enable = true;
+  #services.xserver = {
+  #  enable = true;
+  #  autoRepeatDelay = 200;
+  #  autoRepeatInterval = 35;
+  #  # we're using oxwm
+  #  # windowManager.qtile.enable = true;
+  #};
+
+  # programs.zsh.enable = true;
   users.users.zibbble = {
     isNormalUser = true;
     extraGroups = [ "wheel" ];
     packages = with pkgs; [
       tree
-      zsh
+      # zsh
     ];
-    shell = pkgs.zsh;
+    # shell = pkgs.zsh;
   };
 
   nixpkgs.config.allowUnfree = true;
