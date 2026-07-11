@@ -81,10 +81,11 @@ in
   # missing zsh config
   # missing helix config
 
-  xdg.configFile = builtins.mapAttrs
-    (name: subpath: {
-      source = create_symlink "${dotfiles}/${subpath}";
-      recursive = true;
-    })
-    configs;
+  xdg.configFile."alacritty".source = ./config/alacritty;
+  #xdg.configFile = builtins.mapAttrs
+  #  (name: subpath: {
+  #    source = create_symlink "${dotfiles}/${subpath}";
+  #    recursive = true;
+  #  })
+  #  configs;
 }
