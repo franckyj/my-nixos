@@ -22,15 +22,21 @@
   time.timeZone = "America/Toronto";
 
   # services.displayManager.ly.enable = true;
-  services.getty.autologinUser = "tony";
+  services.getty.autologinUser = "zibbble";
 
-  #services.xserver = {
-  #  enable = true;
-  #  autoRepeatDelay = 200;
-  #  autoRepeatInterval = 35;
-  #  # we're using oxwm
-  #  # windowManager.qtile.enable = true;
-  #};
+  services.displayManager.ly.enable = true;
+  services.xserver = {
+    enable = true;
+    autoRepeatDelay = 200;
+    autoRepeatInterval = 35;
+    windowManager.qtile.enable = true;
+    extraConfig = ''
+        Section "Monitor"
+          Identifier "Virtual-1"
+          Option "PreferredMode" "1920x1080"
+        EndSection
+    '';
+  };
 
   # programs.zsh.enable = true;
   users.users.zibbble = {
