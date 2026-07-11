@@ -52,8 +52,6 @@ in
       ll = "ls -la";
       update = "sudo nixos-rebuild switch";
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#zibbble-nixos";
-      testxdg = "echo ${xdg.configFile}";
-      testhd = "echo ${config.home.homeDirectory}";
     };
 
     initContent = ''
@@ -92,6 +90,27 @@ in
 
   # missing zsh config
   # missing helix config
+
+  home.file = {
+    ".config/myapp/config.ini" = {
+      text = ''
+        [settings]
+        key = value
+        var = ${config.home.homeDirectory}
+      '';
+    };
+  };
+
+  home.file = {
+    ".config/myapp/config2.ini" = {
+      text = ''
+        [settings]
+        key = value
+        var = ${xdg.configFile}
+      '';
+    };
+  };
+
 
   # try and use lib.attrsets.mapAttrs' at some point
   #xdg.configFile."alacritty" = {
