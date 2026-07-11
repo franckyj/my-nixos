@@ -52,8 +52,8 @@ in
       ll = "ls -la";
       update = "sudo nixos-rebuild switch";
       nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#zibbble-nixos";
-      testxdg = "echo ${xdg.configFile}"
-      testhd = "echo ${config.home.homeDirectory}"
+      testxdg = "echo ${xdg.configFile}";
+      testhd = "echo ${config.home.homeDirectory}";
     };
 
     initContent = ''
