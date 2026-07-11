@@ -24,7 +24,6 @@
   # services.displayManager.ly.enable = true;
   services.getty.autologinUser = "zibbble";
 
-  services.displayManager.ly.enable = true;
   services.xserver = {
     enable = true;
     autoRepeatDelay = 200;
