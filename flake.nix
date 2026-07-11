@@ -26,7 +26,6 @@
           # install the overlay
           nixpkgs.overlays = [ alacritty-theme.overlays.default ];
         })
-        #oxwm.nixosModules.default
         {
           services.xserver = {
             enable = true;

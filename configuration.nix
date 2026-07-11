@@ -42,17 +42,11 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    # basic stuff
     vim
     wget
-    docker
-    alacritty
     git
-    brave
-    helix
-    discord
-    steam
-    pi-coding-agent
-    zed
+    alacritty
   ];
 
   fonts.packages = with pkgs; [

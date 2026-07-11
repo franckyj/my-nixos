@@ -1,10 +1,35 @@
 { config, pkgs, ... }:
+let
+  dotfiles = "${config.home.homeDirectory}/nixos-dotfiles/config";
+  create_symlink = path: config.lib.file.mkOutOfStoreSymlink path;
+
+  configs = {
+    alacritty = "alacritty";
+    oxwm = "oxwm";
+  };
+in
 {
   home.username = "zibbble";
   home.homeDirectory = "/home/zibbble";
   home.stateVersion = "26.05";
 
-  # home.packages = with pkgs; [ helix alacritty ];
+  home.packages = with pkgs; [
+    # basic stuff
+    brave
+    rofi
+    picom
+    xwallpaper
+    # development
+    ripgrep
+    docker
+    helix
+    pi-coding-agent
+    zed
+    tmux
+    # gaming
+    discord
+    steam
+  ];
 
   # programs.bash.enable = true;
   programs.zsh = {
@@ -20,8 +45,9 @@
     };
 
     shellAliases = {
-      ll = "ls -l";
+      ll = "ls -la";
       update = "sudo nixos-rebuild switch";
+      nrs = "sudo nixos-rebuild switch --flake ~/nixos-dotfiles#zibbble-nixos";
     };
 
     initContent = ''
@@ -51,6 +77,12 @@
   };
 
   # missing zsh config
-  # missing alacritty config
   # missing helix config
+
+  xdg.configFile = builtins.mapAttrs
+    (name: subpath: {
+      source = create_symlink "${dotfiles}/${subpath}";
+      recursive = true;
+    })
+    configs;
 }
