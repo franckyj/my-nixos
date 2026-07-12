@@ -68,8 +68,8 @@ in
     # theme = pkgs.alacritty-theme.cyber_punk_neon;
     # theme = "cyber_punk_neon";
     settings = { };
-    themePackage = pkgs.alacritty-theme;
-    theme = "dracula";
+    #themePackage = pkgs.alacritty-theme;
+    #theme = "dracula";
     # settings.general.import = [ pkgs.alacritty-theme.cyber_punk_neon ];
   };
 
