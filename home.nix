@@ -65,8 +65,9 @@ in
 
   programs.alacritty = {
     enable = true;
-    theme = pkgs.alacritty-theme.cyber_punk_neon;
+    # theme = pkgs.alacritty-theme.cyber_punk_neon;
     # theme = "cyber_punk_neon";
+    theme = dracula;
     # settings.general.import = [ pkgs.alacritty-theme.cyber_punk_neon ];
   };
 
