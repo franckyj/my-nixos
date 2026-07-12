@@ -17,7 +17,8 @@
     #};
   };
 
-  outputs = inputs@{ self, nixpkgs, home-manager, oxwm, alacritty-theme, ... }: {
+  # alacritty-theme
+  outputs = inputs@{ self, nixpkgs, home-manager, oxwm, ... }: {
     nixosConfigurations.zibbble-nixos = nixpkgs.lib.nixosSystem {
       system = "x86_64-linux";
       modules = [
