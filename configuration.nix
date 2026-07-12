@@ -49,9 +49,16 @@
     alacritty
   ];
 
-  fonts.packages = with pkgs; [
-    nerd-fonts.jetbrains-mono
-  ];
+  fonts = {
+    enableDefaultPackages = true; # Installs basic fonts for Unicode coverage
+    packages = with pkgs; [
+      noto-fonts
+      liberation_ttf
+      fira-code
+      nerd-fonts.jetbrains-mono
+      nerd-fonts.fira-code
+    ];
+  };
 
   nix.gc = {
     automatic = true;

@@ -16,14 +16,14 @@
 local modkey = "Mod4"
 
 -- Terminal emulator command (defualts to alacritty)
-local terminal = "st"
+local terminal = "alacritty"
 
 -- Color palette - customize these to match your theme
 -- Alternatively you can import other files in here, such as
 -- local colors = require("colors.lua") and make colors.lua a file
 -- in the ~/.config/oxwm directory
 -- local colors = require("tokyonight");
-local colors = require("colors.custom-colors");
+local colors = require("colors/gruvbox.lua");
 
 local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 -- local tags = { "", "󰊯", "", "󰰏", "󰟿", "󱇤", "", "󱘶", "󰧮" } -- Example of nerd font icon tags
@@ -116,9 +116,9 @@ oxwm.gaps.set_outer(5, 5)
 -- - Configure window behavior based on title or class
 
 -- Examples (uncomment to use):
-oxwm.rule.add({ instance = "gimp", floating = true })
+--oxwm.rule.add({ instance = "gimp", floating = true })
 oxwm.rule.add({ instance = "brave-browser", tag = 2 })
-oxwm.rule.add({ class = "firefox", tag = 3 })
+--oxwm.rule.add({ class = "firefox", tag = 3 })
 oxwm.rule.add({ instance = "slack", tag = 4 })
 oxwm.rule.add({ instance = "discord", tag = 5 })
 
