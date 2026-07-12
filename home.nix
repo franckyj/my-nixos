@@ -65,7 +65,10 @@ in
 
   programs.alacritty = {
     enable = true;
-    settings.general.import = [ pkgs.alacritty-theme.cyber_punk_neon ];
+    settings.general.import = [
+      pkgs.alacritty-theme.cyber_punk_neon
+      config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml"
+    ];
   };
 
   programs.helix.enable = true;
@@ -96,7 +99,7 @@ in
   #  };
   #};
 
-  xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml";
+  # xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml";
   xdg.configFile."oxwm/config.lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/config.lua";
   xdg.configFile."oxwm/.luarc.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/.luarc.json";
   xdg.configFile."oxwm/colors/custom.lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/colors/custom.lua";
