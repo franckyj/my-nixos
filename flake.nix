@@ -11,10 +11,10 @@
       url = "github:tonybanters/oxwm";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    alacritty-theme = {
-      url = "github:alexghr/alacritty-theme.nix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
+    #alacritty-theme = {
+    #  url = "github:alexghr/alacritty-theme.nix";
+    #  inputs.nixpkgs.follows = "nixpkgs";
+    #};
   };
 
   outputs = inputs@{ self, nixpkgs, home-manager, oxwm, alacritty-theme, ... }: {
@@ -22,10 +22,10 @@
       system = "x86_64-linux";
       modules = [
         ./configuration.nix
-        ({ config, pkgs, ...}: {
-          # install the overlay
-          nixpkgs.overlays = [ alacritty-theme.overlays.default ];
-        })
+        #({ config, pkgs, ...}: {
+        #  # install the overlay
+        #  nixpkgs.overlays = [ alacritty-theme.overlays.default ];
+        #})
         {
           services.xserver = {
             enable = true;
