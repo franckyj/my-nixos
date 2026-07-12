@@ -23,7 +23,7 @@ local terminal = "alacritty"
 -- local colors = require("colors.lua") and make colors.lua a file
 -- in the ~/.config/oxwm directory
 -- local colors = require("tokyonight");
-local colors = require("colors/gruvbox.lua");
+local colors = require("colors/gruvbox");
 
 local tags = { "1", "2", "3", "4", "5", "6", "7", "8", "9" }
 -- local tags = { "", "󰊯", "", "󰰏", "󰟿", "󱇤", "", "󱘶", "󰧮" } -- Example of nerd font icon tags
