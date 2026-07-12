@@ -21,6 +21,7 @@ in
     rofi
     picom
     xwallpaper
+    feh
     # development
     ripgrep
     docker
@@ -96,13 +97,6 @@ in
   # missing zsh config
   # missing helix config
 
-  #xdg.configFile = {
-  #  "alacritty" = {
-  #    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
-  #    # recursive = true;
-  #  };
-  #};
-
   xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml";
   xdg.configFile."oxwm/config.lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/config.lua";
   xdg.configFile."oxwm/.luarc.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/.luarc.json";
@@ -116,18 +110,7 @@ in
   home.file."walls/wallpaper-2.jpg".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/walls/wallpaper-2.jpg";
   home.file."walls/wallpaper-3.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/walls/wallpaper-3.png";
 
-  #xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
-
-  # try and use lib.attrsets.mapAttrs' at some point
-  #xdg.configFile."alacritty" = {
-  #  # source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
-  #  source = config.lib.file.mkOutOfStoreSymlink "/home/zibbble/nixos-dotfiles/config/alacritty";
-  #  recursive = true;
-  #};
-  #home.file.".config/oxwm" = {
-  #  source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm";
-  #  recursive = true;
-  #};
+  home.file."scripts/feh-wallpaper-random.sh".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/scripts/feh-wallpaper-random.sh";
 
   # for some reason this doesn't work => "error installing file outside $HOME"
   #xdg.configFile = builtins.mapAttrs
