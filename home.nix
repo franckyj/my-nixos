@@ -9,8 +9,6 @@ let
   };
 in
 {
-  xdg.enable = true; # Enable XDG base directory support
-
   home.username = "zibbble";
   home.homeDirectory = "/home/zibbble";
   home.stateVersion = "26.05";
@@ -91,14 +89,26 @@ in
   # missing zsh config
   # missing helix config
 
-  xdg.configFile = {
-    "alacritty" = {
-      source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
-      # recursive = true;
-    };
-  };
+  #xdg.configFile = {
+  #  "alacritty" = {
+  #    source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
+  #    # recursive = true;
+  #  };
+  #};
 
-  #xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml";
+  xdg.configFile."alacritty/alacritty.toml".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty/alacritty.toml";
+  xdg.configFile."oxwm/config.lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/config.lua";
+  xdg.configFile."oxwm/.luarc.json".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/.luarc.json";
+  xdg.configFile."oxwm/colors/custom.lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/colors/custom.lua";
+  xdg.configFile."oxwm/colors/gruvbox.lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/colors/gruvbox.lua";
+  xdg.configFile."oxwm/colors/tokyonight.lua".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/oxwm/colors/tokyonight.lua";
+
+  home.file."walls/nixos-wallpaper-1.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/walls/nixos-wallpaper-1.png";
+  home.file."walls/nixos-wallpaper-2.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/walls/nixos-wallpaper-2.png";
+  home.file."walls/wallpaper-1.jpg".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/walls/wallpaper-1.jpg";
+  home.file."walls/wallpaper-2.jpg".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/walls/wallpaper-2.jpg";
+  home.file."walls/wallpaper-3.png".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/walls/wallpaper-3.png";
+
   #xdg.configFile."alacritty".source = config.lib.file.mkOutOfStoreSymlink "${config.home.homeDirectory}/nixos-dotfiles/config/alacritty";
 
   # try and use lib.attrsets.mapAttrs' at some point
