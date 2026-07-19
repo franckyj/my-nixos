@@ -13,6 +13,8 @@ in
   home.homeDirectory = "/home/zibbble";
   home.stateVersion = "26.05";
 
+  programs.nix-ld.enable = true;
+
   home.packages = with pkgs; [
     # basic stuff
     btop
@@ -23,6 +25,7 @@ in
     xwallpaper
     feh
     # development
+    dotnet-sdk_10
     ripgrep
     docker
     helix
@@ -92,6 +95,8 @@ in
     EDITOR = "helix";
     BROWSER = "brave";
     TERM = "xterm-256color";
+
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
 
   # missing zsh config
