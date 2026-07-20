@@ -29,10 +29,9 @@
     autoRepeatInterval = 35;
   };
 
-  programs.zsh.enable = true;
   users.users.zibbble = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel", "docker" ];
     packages = with pkgs; [
       tree
       zsh
@@ -42,12 +41,47 @@
 
   nixpkgs.config.allowUnfree = true;
   environment.systemPackages = with pkgs; [
+    # display manager
+    oxwm
     # basic stuff
     vim
     wget
+    zsh
     git
-    alacritty
+    btop
+    brave
+    stow
+    fzf
+    # alacritty
+    ghostty
+    starship
+    helix
+    rofi
+    picom
+    feh
+    # development
+    dotnet-sdk_10
+    ripgrep
+    docker
+    vscode
+    helix
+    pi-coding-agent
+    zed
+    tmux
+    # gaming
+    discord
+    steam
   ];
+
+  services.xserver.windowManager.oxwm.enable = true;
+
+  programs.zsh.enable = true;
+  programs.git.enable = true;
+  virtualisation.docker.enable = true;
+  programs.starship.enable = true;
+  programs.vscode.enable = true;
+  programs.tmux.enable = true;
+  programs.steam.enable = true;
 
   fonts = {
     enableDefaultPackages = true; # Installs basic fonts for Unicode coverage
@@ -58,6 +92,14 @@
       nerd-fonts.jetbrains-mono
       nerd-fonts.fira-code
     ];
+  };
+
+  environments.sessionVariables = {
+    EDITOR = "helix";
+    BROWSER = "brave";
+    TERM = "xterm-256color";
+
+    DOTNET_ROOT = "${pkgs.dotnet-sdk}/share/dotnet";
   };
 
   nix.gc = {
