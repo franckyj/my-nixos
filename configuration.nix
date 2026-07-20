@@ -31,7 +31,7 @@
 
   users.users.zibbble = {
     isNormalUser = true;
-    extraGroups = [ "wheel", "docker" ];
+    extraGroups = [ "wheel" "docker" ];
     packages = with pkgs; [
       tree
       zsh
