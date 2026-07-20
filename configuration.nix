@@ -94,7 +94,7 @@
     ];
   };
 
-  environments.sessionVariables = {
+  environment.sessionVariables = {
     EDITOR = "helix";
     BROWSER = "brave";
     TERM = "xterm-256color";
