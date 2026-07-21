@@ -56,7 +56,7 @@
     eza
     atuin
     direnv
-    # alacritty
+    alacritty
     ghostty
     starship
     helix
