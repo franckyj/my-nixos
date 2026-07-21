@@ -52,6 +52,10 @@
     brave
     stow
     fzf
+    zoxide
+    eza
+    atuin
+    direnv
     # alacritty
     ghostty
     starship
@@ -77,6 +81,9 @@
 
   programs.zsh.enable = true;
   programs.git.enable = true;
+  programs.zoxide.enable = true;
+  programs.atuin.enable = true;
+  programs.direnv.enable = true;
   virtualisation.docker.enable = true;
   programs.starship.enable = true;
   programs.vscode.enable = true;
