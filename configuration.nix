@@ -57,7 +57,7 @@
     atuin
     direnv
     alacritty
-    ghostty
+    # ghostty
     starship
     helix
     rofi
@@ -114,6 +114,5 @@
     options = "--delete-older-than 30d --max-free 10G";
   };
 
-  #nix.settings.experimental-features = [ "nix-command" "flakes" ];
   system.stateVersion = "26.05";
 }
