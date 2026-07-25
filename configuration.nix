@@ -13,8 +13,11 @@
 
   hardware.cpu.intel.updateMicrocode = true;
   hardware.graphics.enable = true;
+  hardware.bluetooth.enable = true;
+  hardware.bluetooth.powerOnBoot = true;
 
   services.pulseaudio.enable = false;
+  services.pipewire.enable = false;
 
   networking.hostName = "zibbble-nixos";
   networking.networkmanager.enable = true;
@@ -58,12 +61,25 @@
     atuin
     direnv
     alacritty
-    # ghostty
     starship
     helix
     rofi
     picom
     feh
+    dunst
+    lxqt.lxqt-policykit
+    thunar
+    pipewire
+    pavucontrol
+    pamixer
+    xfce4-power-manager
+    flameshot
+    xdotool
+    fastfetch
+    rofi-bluetooth
+    # rofi-network-manager
+    # rofi-power-menu
+    # rofi-rbw
     # development
     dotnet-sdk_10
     ripgrep
@@ -80,11 +96,14 @@
 
   services.xserver.windowManager.oxwm.enable = true;
 
+  security.polkit.enable = true;
+
   programs.zsh.enable = true;
   programs.git.enable = true;
   programs.zoxide.enable = true;
   programs.atuin.enable = true;
   programs.direnv.enable = true;
+  programs.thunar.enable = true;
   virtualisation.docker.enable = true;
   programs.starship.enable = true;
   programs.vscode.enable = true;
