@@ -44,6 +44,7 @@
     # display manager
     oxwm
     # basic stuff
+    file
     vim
     wget
     zsh
