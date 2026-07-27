@@ -1,5 +1,26 @@
 { config, lib, pkgs, ... }:
+let
+  scientifica-nerd = pkgs.stdenvNoCC.mkDerivation {
+    name = "scientifica-nerd";
 
+    nativeBuildInputs = [ pkgs.nerd-font-patcher ];
+
+    dontUnpack = true;
+
+    installPhase = ''
+      mkdir -p $out/share/fonts/truetype
+
+      cp ${pkgs.scientifica}/share/fonts/truetype/*.ttf .
+
+      for f in *.ttf; do
+        nerd-font-patcher \
+          --complete \
+          --outputdir $out/share/fonts/truetype \
+          "$f"
+      done
+    '';
+  };
+in
 {
   imports =
     [
@@ -120,28 +141,7 @@
       fira-code
       nerd-fonts.jetbrains-mono
       nerd-fonts.fira-code
-
-      (pkgs.scientifica.overrideAttrs (o: {
-        nativeBuildInputs = [ pkgs.nerd-font-patcher ];
-        postInstall = ''
-          shopt -s nullglob
-
-          echo "OUT=$out"
-          ls -la $out
-          find $out/share/fonts
-
-          mkdir -p $out/share/fonts/truetype/scientifica
-          mkdir -p $out/share/fonts/truetype/scientifica-nerd
-
-          echo "Before mv:"
-          ls -la $out/share/fonts/truetype/
-
-          mv $out/share/fonts/truetype/*.ttf $out/share/fonts/truetype/scientifica/
-
-          echo "After mv:"
-          find $out/share/fonts
-        '';
-      }))
+      scientifica-nerd
     ];
   };
 
