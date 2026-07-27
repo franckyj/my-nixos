@@ -38,7 +38,12 @@ in
   hardware.bluetooth.powerOnBoot = true;
 
   services.pulseaudio.enable = false;
-  services.pipewire.enable = false;
+  services.pipewire = {
+    enable = true;
+    alsa.enable = true;
+    alsa.support32Bit = true;
+    pulse.enable = true; # Enables PulseAudio emulation
+  };
 
   networking.hostName = "zibbble-nixos";
   networking.networkmanager.enable = true;
@@ -89,8 +94,8 @@ in
     dunst
     lxqt.lxqt-policykit
     thunar
-    pipewire
     pavucontrol
+    pulsemixer
     pamixer
     xfce4-power-manager
     flameshot
