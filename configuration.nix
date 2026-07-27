@@ -127,6 +127,7 @@
           shopt -s nullglob
 
           echo "OUT=$out"
+          ls -la $out
           find $out/share/fonts
 
           mkdir -p $out/share/fonts/truetype/scientifica
