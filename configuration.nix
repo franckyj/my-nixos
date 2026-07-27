@@ -124,11 +124,34 @@
       (pkgs.scientifica.overrideAttrs (o: {
         nativeBuildInputs = [ pkgs.nerd-font-patcher ];
         postInstall = ''
-          mkdir -p $out/share/fonts/truetype/{scientifica,scientifica-nerd}
-          mv $out/share/fonts/truetype/*.ttf $out/share/fonts/truetype/scientifica/
-          for f in $out/share/fonts/truetype/scientifica/*.ttf; do
-            nerd-font-patcher --complete --outputdir $out/share/fonts/truetype/scientifica-nerd/ $f
-          done
+          shopt -s nullglob
+
+          echo "OUT=$out"
+          find $out/share/fonts
+
+          mkdir -p $out/share/fonts/truetype/scientifica
+          mkdir -p $out/share/fonts/truetype/scientifica-nerd
+
+          echo "Before mv:"
+          ls -la $out/share/fonts/truetype/
+
+          mv $out/share/fonts/truetype/*.ttf \
+            $out/share/fonts/truetype/scientifica/
+
+          echo "After mv:"
+          find $out/share/fonts
+
+          # fonts=($out/share/fonts/truetype/*.ttf)
+
+          # if [ ${#fonts[@]} -gt 0 ]; then
+          #     mv "${fonts[@]}" $out/share/fonts/truetype/scientifica/
+          # fi
+
+          # mkdir -p $out/share/fonts/truetype/{scientifica,scientifica-nerd}
+          # mv $out/share/fonts/truetype/*.ttf $out/share/fonts/truetype/scientifica/
+          # for f in $out/share/fonts/truetype/scientifica/*.ttf; do
+          #   nerd-font-patcher --complete --outputdir $out/share/fonts/truetype/scientifica-nerd/ $f
+          # done
         '';
       }))
     ];
