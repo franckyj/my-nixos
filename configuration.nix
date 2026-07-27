@@ -62,7 +62,6 @@
     direnv
     alacritty
     starship
-    helix
     rofi
     picom
     feh
@@ -77,15 +76,16 @@
     xdotool
     fastfetch
     rofi-bluetooth
+    scientifica
     # rofi-network-manager
     # rofi-power-menu
     # rofi-rbw
     # development
+    helix
     dotnet-sdk_10
     ripgrep
     docker
     vscode
-    helix
     pi-coding-agent
     zed
     tmux
@@ -112,6 +112,8 @@
 
   fonts = {
     enableDefaultPackages = true; # Installs basic fonts for Unicode coverage
+    fontDir.enable = true;
+
     packages = with pkgs; [
       noto-fonts
       liberation_ttf
