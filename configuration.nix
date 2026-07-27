@@ -37,7 +37,9 @@ in
   hardware.bluetooth.enable = true;
   hardware.bluetooth.powerOnBoot = true;
 
+  hardware.pulseaudio.enable = false;
   services.pulseaudio.enable = false;
+
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -60,7 +62,7 @@ in
 
   users.users.zibbble = {
     isNormalUser = true;
-    extraGroups = [ "wheel" "docker" ];
+    extraGroups = [ "wheel" "docker" "audio" ];
     packages = with pkgs; [
       tree
       zsh
@@ -97,6 +99,7 @@ in
     pavucontrol
     pulsemixer
     pamixer
+    wireplumber
     xfce4-power-manager
     flameshot
     xdotool
