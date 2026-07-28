@@ -78,6 +78,7 @@ in
     wget
     zsh
     git
+    bat
     btop
     brave
     stow
