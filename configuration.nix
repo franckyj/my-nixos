@@ -77,7 +77,6 @@ in
     vim
     wget
     zsh
-    git
     bat
     btop
     brave
@@ -111,6 +110,7 @@ in
     # rofi-power-menu
     # rofi-rbw
     # development
+    git
     helix
     dotnet-sdk_10
     ripgrep
@@ -119,6 +119,8 @@ in
     pi-coding-agent
     zed
     tmux
+    gh-dash
+    diffnav
     # gaming
     discord
     steam
