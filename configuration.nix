@@ -106,6 +106,9 @@ in
     fastfetch
     rofi-bluetooth
     scientifica
+    rose-pine-icon-theme
+    paper-icon-theme
+    papirus-icon-theme
     # rofi-network-manager
     # rofi-power-menu
     # rofi-rbw
