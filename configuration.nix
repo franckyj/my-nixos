@@ -99,11 +99,10 @@ in
     pavucontrol
     pulsemixer
     pamixer
-    wireplumber
-    xfce4-power-manager
     flameshot
     xdotool
     fastfetch
+    bluez-experimental
     rofi-bluetooth
     scientifica
     rose-pine-icon-theme
@@ -111,7 +110,6 @@ in
     papirus-icon-theme
     # rofi-network-manager
     # rofi-power-menu
-    # rofi-rbw
     # development
     git
     helix
