@@ -91,6 +91,7 @@ in
     rofi
     picom
     feh
+    libnotify
     dunst
     lxqt.lxqt-policykit
     thunar
