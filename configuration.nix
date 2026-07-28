@@ -157,6 +157,8 @@ in
     ];
   };
 
+  xdg.icons.enable = true;
+
   environment.sessionVariables = {
     EDITOR = "helix";
     BROWSER = "brave";
