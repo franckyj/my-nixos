@@ -88,6 +88,7 @@ in
     atuin
     direnv
     alacritty
+    ghostty
     starship
     rofi
     picom
