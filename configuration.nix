@@ -27,10 +27,10 @@ in
       /etc/nixos/hardware-configuration.nix
     ];
 
-  # boot.loader.systemd-boot.enable = true;
-  # boot.loader.efi.canTouchEfiVariables = true;
-  boot.loader.grub.enable = true;
-  boot.loader.grub.devices = [ "/dev/sda" ];
+  boot.loader.systemd-boot.enable = true;
+  boot.loader.efi.canTouchEfiVariables = true;
+  # boot.loader.grub.enable = true;
+  # boot.loader.grub.devices = [ "/dev/sda" ];
 
   hardware.cpu.intel.updateMicrocode = true;
   hardware.graphics.enable = true;
